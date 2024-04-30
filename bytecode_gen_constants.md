@@ -59,17 +59,8 @@ We would have to do this until we have a 150 in the stack. This works but of cou
 So, for our example, the 150 will end up being in the table of literals, and then when the bytecode wants to access it, it will reference it by its position in the table.
 
 The resulting `CompiledMethod` will look like this:
-        _____________________
-        | 1: 1500           |
-        | 2: ...            |
-        | ...               |
-        |                   |
-        |___________________|
-        |  pushLiteral: 1   |
-        |  pushTemp: 0      |
-        |  send: +          |
-        |  returnTop        |
-        |___________________|
+
+<img width="267" alt="Screenshot 2024-04-30 at 11 16 14 AM" src="https://github.com/doste/pharo-vm--notes/assets/12955548/518d7fe7-853f-469f-bec9-3357424ef660">
 
 
 #### Small note about bytecodes:
