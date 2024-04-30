@@ -1,7 +1,5 @@
 ### What is swizzle
 
-Swizzle es patchear los punteros al momento de iniciliazar/loader toda la imagen.
-
 *Swizzle* means to patch pointers when the image get initialized/loaded.
 
 At the moment we save the image, of course we have to save everything. This includes all the _live_ objects. These objects are all stored in the heap memory (it's not actually the real heap of the OS process, for example the objects don't get allocated with a call to `malloc` but conceptually we can think of this region of memory as _a_ heap).
