@@ -11,13 +11,13 @@ There are two types of jumps: Backward and Forward.
     So, in that case, it will simply generate a Jump with target: 0 and then we eventually find the actual target address, it 'patches' the target. Now that that address has been visited.
 
     Example:
-            ```
-            ...
-            jumpNotImm := cogit JumpNonZero: 0
-            ...
-            ...
-            jumpNotImm jmpTarget: cogit Label
-            ```
+````
+    ...
+    jumpNotImm := cogit JumpNonZero: 0
+    ...
+    ...
+    jumpNotImm jmpTarget: cogit Label
+````
 
     A small note about the `cogit Label:` this references the same address where it's defined. So, the target of that Forward Jump will be the exact address where the jmpTarget is set.
 
