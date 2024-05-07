@@ -5,6 +5,9 @@ In this tutorial we'll see how to implement a new primitive.
 
 A prerequisite to be able to follow and code along this tutorial is to have all the VM code downloaded and installed. See [1] below if you need help with this.
 
+_[<ins>Update</ins>: At the time of this writing the primitive format has been already integrated. If you would like to follow along without having the primitive in your system already implemented go to commit c6623c0.
+ To do so you can execute `git checkout c6623c0` when building the VM from the sources ]_
+
  ## primitiveFormat
  
 The primitive we are about to implement gives us the format of the class of a given object.
