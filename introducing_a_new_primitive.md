@@ -370,7 +370,7 @@ For example if you are in Mac, you should see this output:
 ```
 (In Linux it would be an ELF file and in Windows an EXE).
 
-Oh right, we have our VM ready to run. But a PharoVM in its own can't execute anything, we need to give it an image.
+Nice! We have our VM ready to run. But a PharoVM in its own can't execute anything, we need to give it an image.
 
 
 ##### Preparing an image to use the new primitive
