@@ -11,7 +11,7 @@ The solution is to use *Forwarder Objects*
 
 Suppose we have an object like this:
 
-IMAGEN1
+![diagram_one](https://github.com/doste/pharo-vm--notes/assets/12955548/af07483d-b074-4270-b2cb-179acf7fbc95)
 
 We have our object `One` that has two instance variables: `x` and `y`.
     Our `One` object has already been instantiated, so its two variables reference another objects.
@@ -20,11 +20,11 @@ We have our object `One` that has two instance variables: `x` and `y`.
 
 Then, object `Two` gets moved in memory. So, a copy of it is made in another part of the memory. The original `Two` object references its copy.
 
-IMAGEN2
+![diagram_two](https://github.com/doste/pharo-vm--notes/assets/12955548/ca234e8e-bab5-4a2e-a659-f8bf731cab2d)
 
 Now, the original `Two` object gets converted to a _forwarder object_. This imply having a complete different layout in memory. Now, the object has only one slot (an instance variable basically) that references (points to) the original `Two` object.
 
-IMAGEN3
+![diagram_three](https://github.com/doste/pharo-vm--notes/assets/12955548/f0d637ec-807b-4639-8ce7-34eaccede9d0)
 
 The _Forwarder_ stays like this until the first access: When the `One` object access its `y` instance variable it will want to acces to the `Two` object. But when it follows the reference from its `y` value it finds the _Forwarder_, and this one in turn will take its hand and take it to the `Two` object. That's exactly when the access is 'patched'. From now on, the `y` instance variable of `One` will reference the new memory address of the `Two` object directly.
 
@@ -32,4 +32,4 @@ The same logic would apply if there would be more than the `One` object referenc
 
 When all the references have been 'patched' then the _Forwarder_ object is no longer necessary. So, it's ready to be garbage-collected.
 
-Imagen4
+![diagram_four](https://github.com/doste/pharo-vm--notes/assets/12955548/0f2039f2-1b68-47ff-8efc-2d0c9032b9d3)
