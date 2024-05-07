@@ -434,6 +434,8 @@ So, to compare the implementations of the primitive `format` then we launch the 
 
 That's it! We implement a new primitive, test it and then build a new VM with the primitive implemented. Pretty cool, right? :D
 
+-------------------------------------------------------------------------------
+
 
 [1] Installing the PharoVM
   What we want is to have all the code of the PharoVM in the image we are using. If we don't do this we would not have access to for example the primitives table.
